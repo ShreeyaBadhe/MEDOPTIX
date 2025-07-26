@@ -1,7 +1,6 @@
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'medoptix_user',
-    'password': 'medoptix_pass',
-    'database': 'medoptix_db',
-    'port': 3307
+    "host": "medoptix-db.c1a6ekqqiek6.us-east-2.rds.amazonaws.com",
+    "user": "shreeyabadhe",
+    "password": "Shreeya1124",
+    "database": "medoptix_db"
 }

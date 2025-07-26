@@ -171,7 +171,7 @@ if csv_file:
     st.download_button("⬇️ Download Predictions", df_out.to_csv(index=False), "predictions.csv", "text/csv")
 
 # ------------------------------
-# 💾 Download Filtered Data
+# 📂 Download Filtered Data
 # ------------------------------
 st.download_button(
     label="⬇️ Download All Filtered Data as CSV",
