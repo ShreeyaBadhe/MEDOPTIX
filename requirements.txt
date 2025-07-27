@@ -1,0 +1,9 @@
+streamlit
+pandas
+mysql-connector-python
+plotly
+joblib
+gdown
+scikit-learn
+xgboost
+numpy
