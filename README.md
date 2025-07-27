@@ -1,4 +1,4 @@
-# MedOptix: Medicare Cost Analytics & Prediction Dashboard
+# MedOptix: Medicare Claims analysis and Cost estimator
 
 A lightweight open-source Streamlit app that visualizes and predicts Medicare claims cost using beneficiary and claims data. Ideal for healthcare analysts and researchers.
 
