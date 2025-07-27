@@ -1,0 +1,27 @@
+# 👉 Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+venv/
+env/
+
+# 👉 Model outputs, data files, and logs
+*.log
+**/*.csv
+**/*.sqlite
+**/*.db
+**/*.h5
+**/*.joblib
+**/*.pkl
+
+
+
+# 👉 Jupyter notebooks checkpoints, macOS, and VS Code config
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+
+# 👉 SQL files
+**/*.sql
