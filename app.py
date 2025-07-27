@@ -3,6 +3,8 @@ import pandas as pd
 import mysql.connector
 import plotly.express as px
 import joblib
+import os
+import gdown
 from datetime import date
 from config.db_config import DB_CONFIG
 
@@ -16,15 +18,33 @@ def load_data():
     df_claims = pd.read_sql("SELECT * FROM claims", conn)
     conn.close()
     return df_beneficiary, df_claims
-
+GDRIVE_MODELS = {
+    "cost_model_xgb": "https://drive.google.com/uc?id=1Z-3xB2tSRebrbgUjNO_68Bhiz9IiM1BD",
+    "le_icd9": "https://drive.google.com/uc?id=1VlHsM0Q8Qc7-DlLJkaij5Pa9XfeMjFLD",
+    "le_hcpcs": "https://drive.google.com/uc?id=16nYj5VHD2hqIM45GkeRV92zGYq2vtKge",
+}
 # ------------------------------
 # 🧠 Load Model + Encoders
 # ------------------------------
 @st.cache_resource
 def load_model_assets():
-    model = joblib.load("models/cost_model_xgb.joblib")
-    le_icd9 = joblib.load("models/le_icd9.joblib")
-    le_hcpcs = joblib.load("models/le_hcpcs.joblib")
+    os.makedirs("models", exist_ok=True)
+    
+    model_path = "models/cost_model_xgb.joblib"
+    icd9_path = "models/le_icd9.joblib"
+    hcpcs_path = "models/le_hcpcs.joblib"
+    
+    if not os.path.exists(model_path):
+        gdown.download(GDRIVE_MODELS["cost_model_xgb"], model_path, quiet=False)
+    if not os.path.exists(icd9_path):
+        gdown.download(GDRIVE_MODELS["le_icd9"], icd9_path, quiet=False)
+    if not os.path.exists(hcpcs_path):
+        gdown.download(GDRIVE_MODELS["le_hcpcs"], hcpcs_path, quiet=False)
+
+    model = joblib.load(model_path)
+    le_icd9 = joblib.load(icd9_path)
+    le_hcpcs = joblib.load(hcpcs_path)
+
     chronic_cols = [f for f in model.feature_names_in_ if f.startswith("SP_")]
     return model, le_icd9, le_hcpcs, chronic_cols
 
