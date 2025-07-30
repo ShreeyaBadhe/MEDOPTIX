@@ -4,7 +4,8 @@ A lightweight open-source Streamlit app that visualizes and predicts Medicare cl
 
 ## 📽️ Demo
 
-Watch the walkthrough here: [MedOptix Demo](demo_medoptix.gif)
+Watch the walkthrough here:
+![MedOptix Demo](demo_medoptix.gif)
 
 ---
 
