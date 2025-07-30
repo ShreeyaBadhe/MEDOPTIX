@@ -2,9 +2,9 @@
 
 A lightweight open-source Streamlit app that visualizes and predicts Medicare claims cost using beneficiary and claims data. Ideal for healthcare analysts and researchers.
 
-## 📽️ Demo Video
+## 📽️ Demo
 
-Watch the walkthrough here: [MedOptix Demo](https://drive.google.com/file/d/11P_yZB2SP6sU3MIYAOXwLMff0tVcCqO_/view?usp=sharing)
+Watch the walkthrough here: [MedOptix Demo](demo_medoptix.gif)
 
 ---
 
